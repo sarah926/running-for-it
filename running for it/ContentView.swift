@@ -9,18 +9,30 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView{
+            VStack{
+                Text("Get Running!")
+                NavigationLink(destination: Choose_Type(choice: 0)){
+                    RoundedButton(title: "Start", color: .blue).padding(10)
+                }
+            }
         }
-        .padding()
+    }
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
     }
 }
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+struct RoundedButton: View{
+    var title: String
+    var color: Color
+    var body: some View{
+        Text(title).padding(15).frame(maxWidth: .infinity)
+            .background(color)
+            .font(.body)
+            .foregroundColor(.white)
+            .cornerRadius(10)
     }
 }
