@@ -18,6 +18,9 @@
 		D060AD572A7B74350069DD45 /* SelectIntervalTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = D060AD562A7B74350069DD45 /* SelectIntervalTime.swift */; };
 		D060AD592A7CC8A70069DD45 /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = D060AD582A7CC8A70069DD45 /* Countdown.swift */; };
 		D060AD842A7CD7E10069DD45 /* runner Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D060AD832A7CD7E10069DD45 /* runner Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D060ADBB2A809C250069DD45 /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D060ADBA2A809C250069DD45 /* RectangleView.swift */; };
+		D060ADBD2A809E0A0069DD45 /* TimeSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = D060ADBC2A809E0A0069DD45 /* TimeSelected.swift */; };
+		D060ADBF2A844B8F0069DD45 /* IntervalsSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = D060ADBE2A844B8F0069DD45 /* IntervalsSelected.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +109,9 @@
 		D060AD832A7CD7E10069DD45 /* runner Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "runner Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D060AD952A7CD7E20069DD45 /* runner Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "runner Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D060AD9F2A7CD7E20069DD45 /* runner Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "runner Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D060ADBA2A809C250069DD45 /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
+		D060ADBC2A809E0A0069DD45 /* TimeSelected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSelected.swift; sourceTree = "<group>"; };
+		D060ADBE2A844B8F0069DD45 /* IntervalsSelected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalsSelected.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,8 +212,11 @@
 			children = (
 				D060AD2A2A79FAD10069DD45 /* running_for_itApp.swift */,
 				D060AD2C2A79FAD10069DD45 /* ContentView.swift */,
+				D060ADBE2A844B8F0069DD45 /* IntervalsSelected.swift */,
 				D060AD562A7B74350069DD45 /* SelectIntervalTime.swift */,
+				D060ADBA2A809C250069DD45 /* RectangleView.swift */,
 				D060AD582A7CC8A70069DD45 /* Countdown.swift */,
+				D060ADBC2A809E0A0069DD45 /* TimeSelected.swift */,
 				D060AD2E2A79FAD30069DD45 /* Assets.xcassets */,
 				D060AD302A79FAD30069DD45 /* Preview Content */,
 				D060AD542A7A00D90069DD45 /* Choose_Type.swift */,
@@ -550,8 +559,11 @@
 			files = (
 				D060AD2D2A79FAD10069DD45 /* ContentView.swift in Sources */,
 				D060AD2B2A79FAD10069DD45 /* running_for_itApp.swift in Sources */,
+				D060ADBB2A809C250069DD45 /* RectangleView.swift in Sources */,
+				D060ADBF2A844B8F0069DD45 /* IntervalsSelected.swift in Sources */,
 				D060AD552A7A00D90069DD45 /* Choose_Type.swift in Sources */,
 				D060AD572A7B74350069DD45 /* SelectIntervalTime.swift in Sources */,
+				D060ADBD2A809E0A0069DD45 /* TimeSelected.swift in Sources */,
 				D060AD592A7CC8A70069DD45 /* Countdown.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

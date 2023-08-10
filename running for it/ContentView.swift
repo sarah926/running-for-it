@@ -11,8 +11,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             VStack{
-                Text("Get Running!")
-                NavigationLink(destination: Choose_Type(choice: 0)){
+                Text("Start Your Running Adventure!").bold().font(.system(size:33)).multilineTextAlignment(.center)
+                NavigationLink(destination: SelectIntervalTime()){
                     RoundedButton(title: "Start", color: .blue).padding(10)
                 }
             }
@@ -25,6 +25,7 @@ struct ContentView: View {
         }
     }
 }
+
 struct RoundedButton: View{
     var title: String
     var color: Color

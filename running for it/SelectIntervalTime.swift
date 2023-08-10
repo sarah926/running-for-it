@@ -42,51 +42,50 @@ struct SelectIntervalTime: View {
     var body: some View {
         VStack{
             VStack{
-                Text("Select Minimum Running Time:").bold().font(.system(size:20)).multilineTextAlignment(.center).offset(y:185).zIndex((1))
-                star(mins:minRunMinutes, secs:minRunSeconds).offset(y:200)
+                RectangleView(mins:$minRunMinutes, secs:$minRunSeconds, choice:"Select Minimum Run")
             }
-            
+            Spacer()
             VStack{
-                Text("Select Maximum Running Time: ").bold().font(.system(size:20)).multilineTextAlignment(.center).offset(y:85).zIndex((1))
-                star(mins:maxRunMinutes, secs:maxRunSeconds).offset(y:100)
+                RectangleView(mins:$maxRunMinutes, secs:$maxRunSeconds, choice:"Select Maximum Run")
             }
+            Spacer()
             VStack{
-                Text("Select Minimum Walking Time: ").bold().font(.system(size:20)).multilineTextAlignment(.center).offset(y:-10).zIndex((1))
-                star(mins: minWalkMinutes, secs: minWalkSeconds)
+                RectangleView(mins: $minWalkMinutes, secs: $minWalkSeconds, choice:"Select Minimum Walk")
             }
-            /*
-             List{
-             Text("Seconds").frame(alignment: .center)
-             Picker("Seconds", selection: $selectedTime){
-             ForEach(times){ p in
-             Text(String(p.time))
-             //print(String(p.time))
-             }
-             }
-             }.pickerStyle(.wheel)
-             .padding(.horizontal, -15).frame(width:150)
-             */
-            
-            NavigationLink(destination: Countdown(totalTimeInSeconds:calcSeconds(minutes: minRunMinutes, seconds: minRunSeconds))) {
-                RoundedButton(title: "Submit", color: .blue).padding(10).offset(y:-150)
-            }
+                /*
+                 test code for picker
+                 List{
+                 Text("Seconds").frame(alignment: .center)
+                 Picker("Seconds", selection: $selectedTime){
+                 ForEach(times){ p in
+                 Text(String(p.time))
+                 //print(String(p.time))
+                 }
+                 }
+                 }.pickerStyle(.wheel)
+                 .padding(.horizontal, -15).frame(width:150)
+                 */
+                
+            NavigationLink (destination: Choose_Type(times: TimesUserSelected(minRunMinutes: minRunMinutes, minRunSeconds: minRunSeconds, maxRunMinutes: maxRunMinutes, maxRunSeconds: maxRunSeconds, minWalkMinutes: minWalkMinutes, minWalkSeconds: minWalkSeconds))){
+                    RoundedButton(title: "Continue", color: .blue).padding(10)//.offset(y:-150)
+                }
         }
     }
 }
-struct star: View{
-    @State var mins:Int
-    @State var secs:Int
-    var body: some View{
-        Rectangle().foregroundColor(.mint).cornerRadius(20).frame(width: 350, height:150).padding(10).offset(y:-75)
-        HStack{
-            Text("MINUTES:                    ").bold().offset(x:20,y:-200).padding(10)
-            Stepper("\(mins)", value: $mins, in: 0...59).offset(x:-30, y:-200)
-        }
-        HStack{
-            Text("SECONDS:                  ").bold().offset(x:20,y:-200).padding(10)
-            Stepper("\(secs)", value: $secs
-                    , in: 0...59).offset(x:-30, y:-200)
-        }
+class TimesUserSelected{
+    var minRunMinutes: Int
+    var minRunSeconds: Int
+    var maxRunMinutes: Int
+    var maxRunSeconds: Int
+    var minWalkMinutes: Int
+    var minWalkSeconds: Int
+    init(minRunMinutes: Int, minRunSeconds: Int, maxRunMinutes: Int, maxRunSeconds: Int, minWalkMinutes: Int, minWalkSeconds: Int) {
+        self.minRunMinutes = minRunMinutes
+        self.minRunSeconds = minRunSeconds
+        self.maxRunMinutes = maxRunMinutes
+        self.maxRunSeconds = maxRunSeconds
+        self.minWalkMinutes = minWalkMinutes
+        self.minWalkSeconds = minWalkSeconds
     }
 }
 struct SelectIntervalTime_Previews: PreviewProvider {
