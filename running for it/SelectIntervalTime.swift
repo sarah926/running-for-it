@@ -42,15 +42,15 @@ struct SelectIntervalTime: View {
     var body: some View {
         VStack{
             VStack{
-                RectangleView(mins:$minRunMinutes, secs:$minRunSeconds, choice:"Select Minimum Run")
+                RectangleView(mins:$minRunMinutes, secs:$minRunSeconds, choice:"Minimum Running Interval")
             }
             Spacer()
             VStack{
-                RectangleView(mins:$maxRunMinutes, secs:$maxRunSeconds, choice:"Select Maximum Run")
+                RectangleView(mins:$maxRunMinutes, secs:$maxRunSeconds, choice:"Maximum Running Interval")
             }
             Spacer()
             VStack{
-                RectangleView(mins: $minWalkMinutes, secs: $minWalkSeconds, choice:"Select Minimum Walk")
+                RectangleView(mins: $minWalkMinutes, secs: $minWalkSeconds, choice:"Walking Interval")
             }
                 /*
                  test code for picker
@@ -67,7 +67,7 @@ struct SelectIntervalTime: View {
                  */
                 
             NavigationLink (destination: Choose_Type(times: TimesUserSelected(minRunMinutes: minRunMinutes, minRunSeconds: minRunSeconds, maxRunMinutes: maxRunMinutes, maxRunSeconds: maxRunSeconds, minWalkMinutes: minWalkMinutes, minWalkSeconds: minWalkSeconds))){
-                    RoundedButton(title: "Continue", color: .blue).padding(10)//.offset(y:-150)
+                    RoundedButton(title: "Continue", color: .blue)//.offset(y:-150)
                 }
         }
     }

@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct TimeSelected: View {
-    @State var timeUserRequestedTotalSeconds = 0
     @State var times: TimesUserSelected
     @State var timeMinutes = 10
     @State var timeSeconds = 0
     func calcNumberIntervals()->Int{
-        let x = timeUserRequestedTotalSeconds / (times.minRunSeconds + times.minWalkSeconds)
+        let x = (timeMinutes * 60 + timeSeconds)/(times.minRunMinutes * 60 + times.minRunSeconds + times.minWalkMinutes * 60 + times.minWalkSeconds)
         return x
     }
     var body: some View {
         VStack{
             RectangleView(mins: $timeMinutes, secs: $timeSeconds, choice: "Total Time")
-            NavigationLink(destination: Countdown(times: times)){
+            NavigationLink(destination: WorkoutSummary(times: times, intervals: calcNumberIntervals())){
+                //Countdown(times: times, repeats: calcNumberIntervals())
                 RoundedButton(title: "Continue", color: .blue).padding(20)
             }
-        }
+        }.background( Image("runner").resizable().frame(height: 600))
         
     }
 }

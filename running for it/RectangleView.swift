@@ -13,7 +13,8 @@ struct RectangleView: View {
     var choice: String
     var body: some View{
         VStack {
-            Text(choice).bold().font(.system(size:20)).multilineTextAlignment(.center).zIndex((1)).offset(y:10)
+            Text(choice).bold().font(.system(size:20)).multilineTextAlignment(.center).zIndex((1)).offset(y:20)
+            Spacer()
             HStack{
                 Text("MINUTES:                    ").bold().offset(x:20
                 ).padding(10)

@@ -21,6 +21,10 @@
 		D060ADBB2A809C250069DD45 /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D060ADBA2A809C250069DD45 /* RectangleView.swift */; };
 		D060ADBD2A809E0A0069DD45 /* TimeSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = D060ADBC2A809E0A0069DD45 /* TimeSelected.swift */; };
 		D060ADBF2A844B8F0069DD45 /* IntervalsSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = D060ADBE2A844B8F0069DD45 /* IntervalsSelected.swift */; };
+		D060ADC12A858F010069DD45 /* DistanceSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = D060ADC02A858F010069DD45 /* DistanceSelected.swift */; };
+		D060ADC32A85FD8A0069DD45 /* WorkoutSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D060ADC22A85FD8A0069DD45 /* WorkoutSummary.swift */; };
+		D060ADC52A85FE340069DD45 /* SummarySquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = D060ADC42A85FE340069DD45 /* SummarySquare.swift */; };
+		D060ADC72A85FF2C0069DD45 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D060ADC62A85FF2C0069DD45 /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +116,10 @@
 		D060ADBA2A809C250069DD45 /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
 		D060ADBC2A809E0A0069DD45 /* TimeSelected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSelected.swift; sourceTree = "<group>"; };
 		D060ADBE2A844B8F0069DD45 /* IntervalsSelected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalsSelected.swift; sourceTree = "<group>"; };
+		D060ADC02A858F010069DD45 /* DistanceSelected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceSelected.swift; sourceTree = "<group>"; };
+		D060ADC22A85FD8A0069DD45 /* WorkoutSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSummary.swift; sourceTree = "<group>"; };
+		D060ADC42A85FE340069DD45 /* SummarySquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarySquare.swift; sourceTree = "<group>"; };
+		D060ADC62A85FF2C0069DD45 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,14 +220,18 @@
 			children = (
 				D060AD2A2A79FAD10069DD45 /* running_for_itApp.swift */,
 				D060AD2C2A79FAD10069DD45 /* ContentView.swift */,
+				D060AD542A7A00D90069DD45 /* Choose_Type.swift */,
 				D060ADBE2A844B8F0069DD45 /* IntervalsSelected.swift */,
 				D060AD562A7B74350069DD45 /* SelectIntervalTime.swift */,
 				D060ADBA2A809C250069DD45 /* RectangleView.swift */,
+				D060ADC02A858F010069DD45 /* DistanceSelected.swift */,
+				D060ADC42A85FE340069DD45 /* SummarySquare.swift */,
+				D060ADC22A85FD8A0069DD45 /* WorkoutSummary.swift */,
+				D060ADC62A85FF2C0069DD45 /* RoundedButton.swift */,
 				D060AD582A7CC8A70069DD45 /* Countdown.swift */,
 				D060ADBC2A809E0A0069DD45 /* TimeSelected.swift */,
 				D060AD2E2A79FAD30069DD45 /* Assets.xcassets */,
 				D060AD302A79FAD30069DD45 /* Preview Content */,
-				D060AD542A7A00D90069DD45 /* Choose_Type.swift */,
 			);
 			path = "running for it";
 			sourceTree = "<group>";
@@ -558,12 +570,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D060AD2D2A79FAD10069DD45 /* ContentView.swift in Sources */,
+				D060ADC12A858F010069DD45 /* DistanceSelected.swift in Sources */,
+				D060ADC52A85FE340069DD45 /* SummarySquare.swift in Sources */,
 				D060AD2B2A79FAD10069DD45 /* running_for_itApp.swift in Sources */,
 				D060ADBB2A809C250069DD45 /* RectangleView.swift in Sources */,
 				D060ADBF2A844B8F0069DD45 /* IntervalsSelected.swift in Sources */,
 				D060AD552A7A00D90069DD45 /* Choose_Type.swift in Sources */,
+				D060ADC72A85FF2C0069DD45 /* RoundedButton.swift in Sources */,
 				D060AD572A7B74350069DD45 /* SelectIntervalTime.swift in Sources */,
 				D060ADBD2A809E0A0069DD45 /* TimeSelected.swift in Sources */,
+				D060ADC32A85FD8A0069DD45 /* WorkoutSummary.swift in Sources */,
 				D060AD592A7CC8A70069DD45 /* Countdown.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

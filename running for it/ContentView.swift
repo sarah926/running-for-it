@@ -11,10 +11,14 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             VStack{
-                Text("Start Your Running Adventure!").bold().font(.system(size:33)).multilineTextAlignment(.center)
+                Spacer()
+                Text("Start Your Running Adventure! ").bold().font(.system(size:33)).multilineTextAlignment(.center)
+                //Text("🏃").font(.system(size:200))
+                Image("iTunesArtwork").resizable().scaledToFill()
                 NavigationLink(destination: SelectIntervalTime()){
-                    RoundedButton(title: "Start", color: .blue).padding(10)
+                    RoundedButton(title: "Start", color: .blue)
                 }
+                Spacer()
             }
         }
     }
@@ -26,14 +30,4 @@ struct ContentView: View {
     }
 }
 
-struct RoundedButton: View{
-    var title: String
-    var color: Color
-    var body: some View{
-        Text(title).padding(15).frame(maxWidth: .infinity)
-            .background(color)
-            .font(.body)
-            .foregroundColor(.white)
-            .cornerRadius(10)
-    }
-}
+

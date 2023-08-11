@@ -12,17 +12,17 @@ struct IntervalsSelected: View {
     @State var intervals = 0
     var body: some View {
         VStack{
-            Text("how many intervals you want?")
+            Text("How many running intervals do you want?").bold().frame(maxWidth: .infinity).frame(height: 75).background(.mint).font(.system(size:20)).cornerRadius(10).padding(20).multilineTextAlignment(.center)
             //Text(intervals).bold().font(.system(size:20)).multilineTextAlignment(.center).zIndex((1))
             HStack{
                 Text("Intervals:                    ").bold().offset(x:20
-                ).padding(10)
+                ).padding(20)
                 Stepper("\(self.intervals)", value: self.$intervals, in: 0...59).offset(x:-30)
+            }.background(.mint).padding(20).cornerRadius(10)
+            NavigationLink(destination: WorkoutSummary(times: times,intervals:intervals)){
+                RoundedButton(title: "Select", color: .blue)
             }
-            NavigationLink(destination: Countdown(times: times)){
-                RoundedButton(title: "Select", color: .blue).padding(20)
-            }
-        }
+        }.background( Image("runner").resizable().frame(height: 600))
     }
 }
 
