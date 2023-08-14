@@ -5,6 +5,7 @@
 //  Created by Sarah Toll on 2023-08-01.
 //
 
+import SwiftFX
 import SwiftUI
 
 struct ContentView: View {
@@ -12,12 +13,14 @@ struct ContentView: View {
         NavigationView{
             VStack{
                 Spacer()
-                Text("Start Your Running Adventure! ").bold().font(.system(size:33)).multilineTextAlignment(.center)
-                //Text("🏃").font(.system(size:200))
-                Image("iTunesArtwork").resizable().scaledToFill()
+                Image("iTunesArtwork").resizable().scaledToFill().offset(x:-25)
+                //Font(color1: .black, color2: .blue, texts: "RUN", fontSize: 100)
+                CustomFont(text: "RUN TODAY", size:100,color: CustomColors.darkBlue)
+                //Text("RUN TODAY").font(.custom("Impact", size:100)).multilineTextAlignment(.center).foregroundColor(CustomColors.darkBlue).fontWeight(.bold)
                 NavigationLink(destination: SelectIntervalTime()){
-                    RoundedButton(title: "Start", color: .blue)
+                    RoundedButton(title: "Start", color: CustomColors.lightPurple)
                 }
+                Spacer()
                 Spacer()
             }
         }
@@ -28,6 +31,10 @@ struct ContentView: View {
             ContentView()
         }
     }
+}
+struct CustomColors{
+    static let darkBlue = Color(red:72/255, green: 0/255, blue:255/255)
+    static let lightPurple =  Color(red:213/255, green:128/255, blue:254/255)
 }
 
 

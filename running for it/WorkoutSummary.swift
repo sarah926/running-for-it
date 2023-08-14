@@ -16,16 +16,17 @@ struct WorkoutSummary: View {
         VStack{
             HStack{
                 NavigationLink(destination: Countdown(times:times, repeats: intervals)){
-                    RoundedButton(title: "Continue", color: .blue)
+                    RoundedButton(title: "Continue", color: CustomColors.darkBlue)
                 }
                 Spacer()
                 NavigationLink(destination: SelectIntervalTime()){
-                    RoundedButton(title: "Edit", color: .blue).frame(width:120)
+                    RoundedButton(title: "Edit", color: CustomColors.darkBlue).frame(width:120)
                 }
                 
             }
             Image("iTunesArtwork").resizable().frame(width: 150, height: 150)
-            Text("Your Workout Summary:").font(.system(size:33)).bold().multilineTextAlignment(.center).foregroundColor(.mint)
+            CustomFont(text:"SUMMARY", size:50,color: CustomColors.darkBlue)
+            //Text("Your Workout Summary:").font(.system(size:33)).bold().multilineTextAlignment(.center).foregroundColor(.mint)
             //Spacer()
             ScrollView{
                 LazyVGrid(columns: columns, spacing: 15){

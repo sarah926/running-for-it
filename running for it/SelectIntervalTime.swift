@@ -41,16 +41,20 @@ struct SelectIntervalTime: View {
     }
     var body: some View {
         VStack{
-            VStack{
-                RectangleView(mins:$minRunMinutes, secs:$minRunSeconds, choice:"Minimum Running Interval")
+            Spacer()
+            VStack(spacing:0){
+                CustomFont(text: "MIN RUN", size: 50, color: CustomColors.darkBlue)
+                RectangleView(mins:$minRunMinutes, secs:$minRunSeconds, backColor: CustomColors.darkBlue, textColor: .white)
             }
             Spacer()
-            VStack{
-                RectangleView(mins:$maxRunMinutes, secs:$maxRunSeconds, choice:"Maximum Running Interval")
+            VStack(spacing:0){
+                CustomFont(text: "MAX RUN", size: 50, color: CustomColors.darkBlue)
+                RectangleView(mins:$maxRunMinutes, secs:$maxRunSeconds, backColor: CustomColors.darkBlue, textColor: .white)
             }
             Spacer()
-            VStack{
-                RectangleView(mins: $minWalkMinutes, secs: $minWalkSeconds, choice:"Walking Interval")
+            VStack(spacing:0){
+                CustomFont(text: "WALK", size: 50, color: .mint)
+                RectangleView(mins: $minWalkMinutes, secs: $minWalkSeconds,backColor: .mint, textColor: .white)
             }
                 /*
                  test code for picker
@@ -67,7 +71,7 @@ struct SelectIntervalTime: View {
                  */
                 
             NavigationLink (destination: Choose_Type(times: TimesUserSelected(minRunMinutes: minRunMinutes, minRunSeconds: minRunSeconds, maxRunMinutes: maxRunMinutes, maxRunSeconds: maxRunSeconds, minWalkMinutes: minWalkMinutes, minWalkSeconds: minWalkSeconds))){
-                    RoundedButton(title: "Continue", color: .blue)//.offset(y:-150)
+                RoundedButton(title: "Continue", color: CustomColors.lightPurple)//.offset(y:-150)
                 }
         }
     }

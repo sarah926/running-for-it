@@ -64,11 +64,14 @@ struct Countdown: View {
     var body: some View {
         //var totalTime = minutes * 60 + seconds
         VStack{
+            Spacer()
             if(runOrWalk == 0){
-                Text("RUN").bold().font(.system(size:33)).foregroundColor(.blue)
+                CustomFont(text: "RUN", size: 50, color: CustomColors.darkBlue)
+                //Text("RUN").bold().font(.system(size:33)).foregroundColor(.blue)
             }
             else{
-                Text("WALK").bold().font(.system(size:33)).foregroundColor(.mint)
+                CustomFont(text: "WALK", size: 50, color: .mint)
+                //Text("WALK").bold().font(.system(size:33)).foregroundColor(.mint)
             }
             
             //Text(String(self.totalMinRunSec)).bold()
@@ -77,13 +80,15 @@ struct Countdown: View {
                     self.handleTimer()
                 }
             
-            //Text("\(repeats - timerNumber + 1) more intervals left!")
+            Text("Interval \(timerNumber) / \(repeats * 2)")
+            Spacer()
+            RoundedButton(title: "Pause", color: CustomColors.lightPurple)
         }
     }
 }
 
 struct Countdown_Previews: PreviewProvider {
     static var previews: some View {
-        Countdown(times: TimesUserSelected(minRunMinutes: 1, minRunSeconds: 30, maxRunMinutes: 2, maxRunSeconds: 30, minWalkMinutes: 1, minWalkSeconds: 30), repeats:2)
+        Countdown(times: TimesUserSelected(minRunMinutes: 0, minRunSeconds: 30, maxRunMinutes: 2, maxRunSeconds: 30, minWalkMinutes: 1, minWalkSeconds: 30), repeats:2)
     }
 }

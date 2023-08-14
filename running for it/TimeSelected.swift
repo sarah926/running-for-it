@@ -17,12 +17,15 @@ struct TimeSelected: View {
     }
     var body: some View {
         VStack{
-            RectangleView(mins: $timeMinutes, secs: $timeSeconds, choice: "Total Time")
+            CustomFont(text:"TOTAL WORKOUT TIME", size: 75,color: CustomColors.darkBlue)
+            RectangleView(mins: $timeMinutes, secs: $timeSeconds, backColor: .mint, textColor: .white)
+            Spacer()
             NavigationLink(destination: WorkoutSummary(times: times, intervals: calcNumberIntervals())){
                 //Countdown(times: times, repeats: calcNumberIntervals())
-                RoundedButton(title: "Continue", color: .blue).padding(20)
+                RoundedButton(title: "Continue", color: CustomColors.lightPurple).padding(20)
             }
-        }.background( Image("runner").resizable().frame(height: 600))
+        }
+        //.background( Image("runner").resizable().frame(height: 600))
         
     }
 }

@@ -11,11 +11,12 @@ struct RoundedButton: View {
         var title: String
         var color: Color
         var body: some View{
-            Text(title).padding(15).frame(maxWidth: .infinity)
+            Text(title).padding(15).frame(maxWidth:200).frame(height: 60)
+                //maxWidth: .infinity)
                 .background(color)
                 .font(.body)
                 .foregroundColor(.white)
-                .cornerRadius(10)
+                .cornerRadius(30)
                 .bold().padding(20)
         }
     

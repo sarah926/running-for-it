@@ -24,14 +24,14 @@ struct SummarySquare: View {
     var body: some View {
         VStack{
             if isRun{
-                Text("Run").background(Rectangle().fill(Color.blue).frame(width:80)).foregroundColor(.black).font(.system(size:35))
+                Text("Run").background(Rectangle().fill(CustomColors.darkBlue).frame(width:80)).foregroundColor(.white).font(.system(size:35))
             }
             else{
-                Text("Walk").background(.mint).font(.system(size:35))
+                Text("Walk").background(.mint).font(.system(size:37)).foregroundColor(.white)
             }
             let temp = updateTime(seconds: t)
             Text("\(temp)").font(.system(size:25)).bold()
-        }.frame(width:80).border(.black, width: 4)
+        }.frame(width:85).border(.black, width: 4)
     }
 }
 
