@@ -29,6 +29,8 @@
 		D060ADCE2A8987A00069DD45 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = D060ADCD2A8987A00069DD45 /* Font.swift */; };
 		D060ADD02A89987A0069DD45 /* RectangleViewVersion2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D060ADCF2A89987A0069DD45 /* RectangleViewVersion2.swift */; };
 		D060ADD22A899C1B0069DD45 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D060ADD12A899C1B0069DD45 /* CustomFont.swift */; };
+		D060ADD42A89B6FB0069DD45 /* FinishedWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D060ADD32A89B6FB0069DD45 /* FinishedWorkout.swift */; };
+		D060ADD62A89EFAD0069DD45 /* RectangleVersion3.swift in Sources */ = {isa = PBXBuildFile; fileRef = D060ADD52A89EFAD0069DD45 /* RectangleVersion3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +129,8 @@
 		D060ADCD2A8987A00069DD45 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		D060ADCF2A89987A0069DD45 /* RectangleViewVersion2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleViewVersion2.swift; sourceTree = "<group>"; };
 		D060ADD12A899C1B0069DD45 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
+		D060ADD32A89B6FB0069DD45 /* FinishedWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedWorkout.swift; sourceTree = "<group>"; };
+		D060ADD52A89EFAD0069DD45 /* RectangleVersion3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleVersion3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,9 +236,11 @@
 				D060AD542A7A00D90069DD45 /* Choose_Type.swift */,
 				D060ADCD2A8987A00069DD45 /* Font.swift */,
 				D060ADBE2A844B8F0069DD45 /* IntervalsSelected.swift */,
+				D060ADD32A89B6FB0069DD45 /* FinishedWorkout.swift */,
 				D060AD562A7B74350069DD45 /* SelectIntervalTime.swift */,
 				D060ADBA2A809C250069DD45 /* RectangleView.swift */,
 				D060ADCF2A89987A0069DD45 /* RectangleViewVersion2.swift */,
+				D060ADD52A89EFAD0069DD45 /* RectangleVersion3.swift */,
 				D060ADC02A858F010069DD45 /* DistanceSelected.swift */,
 				D060ADC42A85FE340069DD45 /* SummarySquare.swift */,
 				D060ADC22A85FD8A0069DD45 /* WorkoutSummary.swift */,
@@ -589,8 +595,10 @@
 				D060ADD22A899C1B0069DD45 /* CustomFont.swift in Sources */,
 				D060AD2D2A79FAD10069DD45 /* ContentView.swift in Sources */,
 				D060ADC12A858F010069DD45 /* DistanceSelected.swift in Sources */,
+				D060ADD62A89EFAD0069DD45 /* RectangleVersion3.swift in Sources */,
 				D060ADC52A85FE340069DD45 /* SummarySquare.swift in Sources */,
 				D060AD2B2A79FAD10069DD45 /* running_for_itApp.swift in Sources */,
+				D060ADD42A89B6FB0069DD45 /* FinishedWorkout.swift in Sources */,
 				D060ADBB2A809C250069DD45 /* RectangleView.swift in Sources */,
 				D060ADBF2A844B8F0069DD45 /* IntervalsSelected.swift in Sources */,
 				D060AD552A7A00D90069DD45 /* Choose_Type.swift in Sources */,

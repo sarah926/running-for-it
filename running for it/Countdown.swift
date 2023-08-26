@@ -36,6 +36,12 @@ struct Countdown: View {
         if(timerNumber > 0 && timerNumber < (repeats * 2)){
             newTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
         }
+        else if(timerNumber >= (repeats * 2)){
+            /*NavigationLink(destination: FinishedWorkout()){
+                RoundedButton(title: "Done", color: CustomColors.darkBlue)
+            }*/
+            
+        }
         if tempTime > 0 {
             tempTime -= 1
         }
@@ -82,7 +88,9 @@ struct Countdown: View {
             
             Text("Interval \(timerNumber) / \(repeats * 2)")
             Spacer()
-            RoundedButton(title: "Pause", color: CustomColors.lightPurple)
+            NavigationLink(destination: FinishedWorkout()){
+                RoundedButton(title: "End Workout", color: CustomColors.lightPurple)
+            }
         }
     }
 }

@@ -43,18 +43,18 @@ struct SelectIntervalTime: View {
         VStack{
             Spacer()
             VStack(spacing:0){
-                CustomFont(text: "MIN RUN", size: 50, color: CustomColors.darkBlue)
-                RectangleView(mins:$minRunMinutes, secs:$minRunSeconds, backColor: CustomColors.darkBlue, textColor: .white)
+                CustomFont(text: "RUN", size: 100, color: CustomColors.darkBlue)
+                RectangleViewVersion2(minMins:$minRunMinutes, minSecs:$minRunSeconds, maxMins: $maxRunMinutes, maxSecs: $maxRunSeconds, backColor: CustomColors.darkBlue, textColor: .white)
             }
             Spacer()
-            VStack(spacing:0){
+            /*VStack(spacing:0){
                 CustomFont(text: "MAX RUN", size: 50, color: CustomColors.darkBlue)
                 RectangleView(mins:$maxRunMinutes, secs:$maxRunSeconds, backColor: CustomColors.darkBlue, textColor: .white)
-            }
+            }*/
             Spacer()
             VStack(spacing:0){
-                CustomFont(text: "WALK", size: 50, color: .mint)
-                RectangleView(mins: $minWalkMinutes, secs: $minWalkSeconds,backColor: .mint, textColor: .white)
+                CustomFont(text: "WALK", size: 100, color: .mint)
+                RectangleVersion3(minMins: $minWalkMinutes, minSecs: $minWalkSeconds,backColor: .mint, textColor: .white)
             }
                 /*
                  test code for picker

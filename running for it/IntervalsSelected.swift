@@ -17,9 +17,9 @@ struct IntervalsSelected: View {
             //Text("How many running intervals do you want?").bold().frame(height: 75).font(.system(size:20)).cornerRadius(10).padding(20).multilineTextAlignment(.center)
             //Text(intervals).bold().font(.system(size:20)).multilineTextAlignment(.center).zIndex((1))
             HStack{
-                Spacer(minLength:170)
+                Spacer(minLength:200)
                 Stepper("\(self.intervals)", value: self.$intervals, in: 0...59).offset(x:-30).font(.custom("Arial", size:50)).foregroundColor(.white)
-            }.background(Rectangle().fill(Color.mint).cornerRadius(30).frame(width: 350, height:150)).padding(30).foregroundColor(.white)
+            }.background(Rectangle().fill(Color.mint).cornerRadius(30).frame(width: 350, height:150)).foregroundColor(.white)
             Spacer()
             NavigationLink(destination: WorkoutSummary(times: times,intervals:intervals)){
                 RoundedButton(title: "Select", color: CustomColors.lightPurple)

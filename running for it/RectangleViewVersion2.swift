@@ -8,33 +8,47 @@
 import SwiftUI
 
 struct RectangleViewVersion2: View {
-    @Binding var mins:Int
-    @Binding var secs:Int
+    @Binding var minMins:Int
+    @Binding var minSecs:Int
+    @Binding var maxMins:Int
+    @Binding var maxSecs:Int
     var backColor: Color
     var textColor: Color
     var body: some View{
-        VStack {
+        VStack (spacing:0){
             HStack{
-                Spacer()
-                CustomFont(text:"MINIMUM:", size:30,color: textColor)
-                //Text("MINIMUM:")
+                Text("Minimum:").font(.custom("Arial", size:33)).foregroundColor(textColor).bold().padding(20)
                 Spacer()
                 TextField("00", text: Binding(
-                    get: { String(format: "%02d", mins)
+                    get: { String(format: "%02d", minMins)
                     },
-                    set: { mins = Int($0) ?? 0 }
-                )).frame(width:50).foregroundColor(textColor).font(.custom("Impact", size:30)).background(.black)
-                CustomFont(text: ":", size: 30, color: textColor)
+                    set: { minMins = Int($0) ?? 0 }
+                )).frame(width:50).foregroundColor(textColor).font(.custom("Arial", size:33)).background(CustomColors.darkerBlue).multilineTextAlignment(.center).bold()
+                Text(":").font(.custom("Arial", size:33)).foregroundColor(textColor).bold()
+                TextField("00", text: Binding(
+                    get: { String(format: "%02d",minSecs) },
+                    set: { minSecs = Int($0) ?? 0 }
+                )).frame(width:50).foregroundColor(textColor).font(.custom("Arial", size:33)).background(CustomColors.darkerBlue).multilineTextAlignment(.center).bold()
                 Spacer()
-                TextField("50", text: Binding(
-                    get: { String(secs) },
-                    set: { secs = Int($0) ?? 0 }
-                )).frame(width:50).foregroundColor(textColor).font(.custom("Impact", size:30))
+            }
+            HStack{
+                Text("Maximum:").font(.custom("Arial", size:33)).foregroundColor(textColor).bold().padding(20)
+                Spacer()
+                TextField("00", text: Binding(
+                    get: { String(format: "%02d", maxMins)
+                    },
+                    set: { maxMins = Int($0) ?? 0 }
+                )).frame(width:50).foregroundColor(textColor).font(.custom("Arial", size:33)).background(CustomColors.darkerBlue).multilineTextAlignment(.center).bold()
+                Text(":").font(.custom("Arial", size:33)).foregroundColor(textColor).bold()
+                TextField("00", text: Binding(
+                    get: { String(format: "%02d",maxSecs) },
+                    set: { maxSecs = Int($0) ?? 0 }
+                )).frame(width:50).foregroundColor(textColor).font(.custom("Arial", size:33)).background(CustomColors.darkerBlue).multilineTextAlignment(.center).bold()
                 Spacer()
             }
         
         }
-        .frame(minHeight:100)
+        .frame(height:175)
         .background(backColor)
         .cornerRadius(30)
         .padding(10)
@@ -44,6 +58,6 @@ struct RectangleViewVersion2: View {
 
 struct RectangleViewVersion2_Previews: PreviewProvider {
     static var previews: some View {
-        RectangleViewVersion2( mins: .constant(1), secs:.constant(2),backColor: .mint, textColor: .white)
+        RectangleViewVersion2(minMins: .constant(1), minSecs: .constant(3), maxMins: .constant(1), maxSecs:.constant(2),backColor: CustomColors.darkBlue, textColor: .white)
     }
 }
