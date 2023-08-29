@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
-
+//to be removed later? keeps text formatted
 struct CustomFont: View{
     var text: String
     var size: CGFloat
     var color: Color
     var body: some View{
-        Text(text).font(.custom("Impact", size:size)).multilineTextAlignment(.center).foregroundColor(color).fontWeight(.bold)
+        Text(text).font(.system(size:size)).multilineTextAlignment(.center).foregroundColor(color).fontWeight(.bold)
     }
 }
 

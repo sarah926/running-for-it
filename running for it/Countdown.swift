@@ -9,12 +9,11 @@ import SwiftUI
 import AVFoundation
 
 struct Countdown: View {
-    //@State var totalTimeInSeconds: Int
     @State var times: TimesUserSelected
     @State var repeats: Int
-    
-    @State var runOrWalk = 0
     //run is 0, walk is 1
+    @State var runOrWalk = 0
+   
     @State var tempTime = 0
     @State var initialized = false
     @State var timerNumber = 1
@@ -70,26 +69,31 @@ struct Countdown: View {
     var body: some View {
         //var totalTime = minutes * 60 + seconds
         VStack{
-            Spacer()
+            Spacer(minLength:161)
             if(runOrWalk == 0){
-                CustomFont(text: "RUN", size: 50, color: CustomColors.darkBlue)
+                Text("Run Interval").font(.system(size:20)).fontWeight(.bold)
+                Text("Time left to run.").font(.system(size:12)).foregroundColor(CustomColors.darkGray)
+                //CustomFont(text: "Run Interval", size: 50, color: CustomColors.darkBlue)
                 //Text("RUN").bold().font(.system(size:33)).foregroundColor(.blue)
             }
             else{
-                CustomFont(text: "WALK", size: 50, color: .mint)
+                Text("Walk Interval").font(.system(size:20)).fontWeight(.bold).foregroundColor(CustomColors.black)
+                Text("Time left to walk.").font(.system(size:12)).foregroundColor(CustomColors.darkGray)
+                //CustomFont(text: "WALK", size: 50, color: .mint)
                 //Text("WALK").bold().font(.system(size:33)).foregroundColor(.mint)
             }
-            
+            Spacer(minLength:130)
             //Text(String(self.totalMinRunSec)).bold()
-            Text(updateTime(seconds: tempTime)).bold().font(.system(size:100))
+            Text(updateTime(seconds: tempTime)).font(.system(size:64)).fontWeight(.bold).background(Circle().fill(LinearGradient(gradient: Gradient(colors: [CustomColors.newBlue, CustomColors.newBlue2]), startPoint: .leading, endPoint: .trailing)).frame(width:262, height:262))
                 .onReceive(newTimer) { _ in
                     self.handleTimer()
                 }
-            
-            Text("Interval \(timerNumber) / \(repeats * 2)")
-            Spacer()
+            Spacer(minLength: 200)
+            Text("=").font(.system(size:40)).foregroundColor(.white).fontWeight(.bold).rotationEffect(Angle(degrees:-90)).background(Circle().fill(LinearGradient(gradient: Gradient(colors: [CustomColors.darkPink, CustomColors.lightPink]), startPoint: .leading, endPoint: .trailing)).frame(width:60))
+            //Text("Interval \(timerNumber) / \(repeats * 2)")
             NavigationLink(destination: FinishedWorkout()){
-                RoundedButton(title: "End Workout", color: CustomColors.lightPurple)
+                gradient(text: "Skip To Walk", color1: CustomColors.newBlue, color2: CustomColors.newBlue2)
+                //RoundedButton(title: "End Workout", color: CustomColors.lightPurple)
             }
         }
     }

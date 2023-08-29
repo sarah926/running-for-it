@@ -10,12 +10,18 @@ import SwiftUI
 struct FinishedWorkout: View {
     var body: some View {
         VStack{
-            Image("iTunesArtwork").resizable()
-            CustomFont(text: "CONGRATS RUNNER!", size: 75, color: CustomColors.darkBlue)
+            Spacer(minLength:20)
+            Image("Groupcongrats").resizable().frame(width:255, height:327)
             Spacer()
             Spacer()
+            Text("Congratulations, You Have\nFinished Your Workout").font(.system(size:20))
+                .multilineTextAlignment(.center).fontWeight(.bold)
+            Spacer()
+            Text("Running is the greatest metaphor for life, because\nyou get out of it what you put into it.").multilineTextAlignment(.center).font(.system(size:12)).foregroundColor(CustomColors.darkGray)
+            Spacer()
+            Text("- Oprah Winfrey").multilineTextAlignment(.center).font(.system(size:12)).foregroundColor(CustomColors.darkGray)
             NavigationLink(destination:ContentView()){
-                RoundedButton(title: "Home", color: CustomColors.lightPurple)
+                gradient(text: "Back To Home", color1: CustomColors.newBlue2, color2: CustomColors.newBlue)
             }
         }
     }
