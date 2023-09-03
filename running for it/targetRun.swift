@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct targetRun: View {
+    @State var user: UserInformation
+    @State var b = beginnerPlan()
     var body: some View {
         ZStack{
             Rectangle().foregroundColor(CustomColors.newBlue2).opacity(0.4)
@@ -19,9 +21,22 @@ struct targetRun: View {
                 }
                 Spacer()
                 HStack{
-                    lilRectangle(number: 5, title: "Run Time")
-                    lilRectangle(number: 5, title: "Intervals")
-                    lilRectangle(number: 5, title: "Time").padding(.trailing, 20)
+                    Spacer()
+                    VStack{
+                        Text("Intervals").foregroundColor(CustomColors.darkGray).font(.system(size:12))
+                        lilRectangle2(number:Double( b.repeats[user.workoutsCompleted]))
+                    }
+                    Spacer()
+                    VStack{
+                        Text("Run Interval").foregroundColor(CustomColors.darkGray).font(.system(size:12))
+                        lilRectangle2(number: b.runTimes[user.workoutsCompleted])
+                    }
+                    Spacer()
+                    VStack{
+                        Text("Time").foregroundColor(CustomColors.darkGray).font(.system(size:12))
+                        lilRectangle2(number: b.totalTimes[user.workoutsCompleted])
+                    }
+                    Spacer()
                 }.padding(.bottom, 40)
             }.frame(width: 315, height: 162)
         }
@@ -30,6 +45,7 @@ struct targetRun: View {
 
 struct targetRun_Previews: PreviewProvider {
     static var previews: some View {
-        targetRun()
+        targetRun(user: UserInformation(firstname: "sarah", lastname: "toll", level: "beginner", workoutsCompleted: 3, timeRan: 30, timeWorkedOut: 50))
     }
 }
+

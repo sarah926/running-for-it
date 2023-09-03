@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct LevelSelect: View {
-    @State var level: Int
+    @State var user: UserInformation
+    @State var level: Int = 0
     func nextLevel(leftOrRight:Int)->Int{
         var tempLevel = 0
         if(leftOrRight == 0){
@@ -44,8 +45,9 @@ struct LevelSelect: View {
                 
             }
             Spacer()
-            NavigationLink(destination: SelectIntervalTime()){
-                gradient(text: "Confirm", color1: CustomColors.newBlue, color2: CustomColors.newBlue2)}
+            NavigationLink(destination: Welcome(user: UserInformation(firstname: user.firstname, lastname: user.lastname, level: user.setLevel(level: level), workoutsCompleted: user.workoutsCompleted, timeRan: user.timeRan, timeWorkedOut: user.timeWorkedOut))){
+                gradient(text: "Confirm", color1: CustomColors.newBlue, color2: CustomColors.newBlue2)
+            }
             /*Picker("hello", selection: .constant(1)) {
              beginnerOption(imageName: "Vectorinter", level: 1).frame(height:100)
              //Rectangle().fill(CustomColors.newBlue)
@@ -59,6 +61,6 @@ struct LevelSelect: View {
 
 struct LevelSelect_Previews: PreviewProvider {
     static var previews: some View {
-        LevelSelect(level:1)
+        LevelSelect(user: UserInformation(firstname: "sarah", lastname: "toll", level: "beginner", workoutsCompleted: 2, timeRan: 30, timeWorkedOut: 50), level:1)
     }
 }

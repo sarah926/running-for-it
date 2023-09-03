@@ -16,7 +16,7 @@ struct HomePage: View {
                 Spacer()
             }
             HStack{
-                Text(user.name).font(.system(size:20)).foregroundColor(CustomColors.black).fontWeight(.bold).padding(.leading, 30)
+                Text(user.firstname + " " + user.lastname).font(.system(size:20)).foregroundColor(CustomColors.black).fontWeight(.bold).padding(.leading, 30)
                 Spacer()
             }
             HStack{
@@ -25,7 +25,7 @@ struct HomePage: View {
             }
             Divider()
             //Spacer()
-            targetRun()
+            targetRun(user: user)
             HStack{
                 Text("Workout Progress").font(.system(size:20)).foregroundColor(CustomColors.black).fontWeight(.bold).padding(.leading, 30)
                 Spacer()
@@ -33,27 +33,18 @@ struct HomePage: View {
             barGraph()
             HStack{
                 Text("Latest Workouts").font(.system(size:20)).foregroundColor(CustomColors.black).fontWeight(.bold).padding(.leading, 30)
-                
+                Spacer()
             }
-            ZStack{
-                Rectangle().foregroundColor(CustomColors.newBlue2).opacity(0.4)
-                    .frame(width: 315, height: 162).cornerRadius(22)
+            List{
+                Text("27 minute walk")
             }
-            HStack{
-                Spacer()
-                Image("Home")
-                Spacer()
-                Image("Activity").resizable().frame(width:40,height:40).background(Rectangle().fill(CustomColors.newBlue2).frame(width:40,height:40).cornerRadius(10))
-                Spacer()
-                Image("Profile")
-                Spacer()
-            }.frame(width: 375, height: 50)
+            navBar(user: user, page: 0)
         }
     }
 }
 
 struct HomePage_Previews: PreviewProvider {
     static var previews: some View {
-        HomePage(user: UserInformation(name: "Sarah", level: "Beginner", workoutsCompleted: 3, timeRan: 20, timeWorkedOut: 30))
+        HomePage(user: UserInformation(firstname: "Sarah", lastname: "toll", level: "Beginner", workoutsCompleted: 3, timeRan: 20, timeWorkedOut: 30))
     }
 }

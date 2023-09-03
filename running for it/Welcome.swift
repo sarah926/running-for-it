@@ -12,7 +12,7 @@ struct Welcome: View {
     var body: some View {
         VStack{
             Image("Group6").frame(width: 277, height: 303)
-            Text("Welcome, " + user.name).font(.system(size:20)).fontWeight(.bold)
+            Text("Welcome, " + user.firstname).font(.system(size:20)).fontWeight(.bold)
             Text("You are all set, let’s reach your\nrunning goals together")
                 .font(.system(size: 12))
                 .multilineTextAlignment(.center).foregroundColor(CustomColors.darkGray)
@@ -26,6 +26,6 @@ struct Welcome: View {
 
 struct Welcome_Previews: PreviewProvider {
     static var previews: some View {
-        Welcome(user: UserInformation(name: "Sarah", level: "beginner", workoutsCompleted: 2, timeRan: 5, timeWorkedOut: 30))
+        Welcome(user: UserInformation(firstname: "Sarah", lastname: "Toll",level: "beginner", workoutsCompleted: 2, timeRan: 5, timeWorkedOut: 30))
     }
 }

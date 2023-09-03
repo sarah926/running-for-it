@@ -16,7 +16,7 @@ struct ProfilePage: View {
             HStack{
                 Image("Latest-Pic").resizable().padding(10).frame(width: 100, height:100)
                 Spacer()
-                Text(user.name).font(.system(size:36)).fontWeight(.medium).padding(.trailing,30)
+                Text(user.firstname + " " + user.lastname).font(.system(size:36)).fontWeight(.medium).padding(.trailing,30)
                 
             }
             HStack{
@@ -28,11 +28,11 @@ struct ProfilePage: View {
                 //Text(user.level).font(.system(size:12))
             }
             HStack{
-                lilRectangle(number:3, title:"Workouts")
+                lilRectangle(number: user.workoutsCompleted, title:"Workouts")
                 Spacer()
-                lilRectangle(number:150, title:"Minutes Ran")
+                lilRectangle(number:user.timeRan, title:"Minutes Ran")
                 Spacer()
-                lilRectangle(number:300, title:"Total Minutes").padding(.trailing,20)
+                lilRectangle(number:user.timeWorkedOut, title:"Total Minutes").padding(.trailing,20)
             }
             List{
                 Section{
@@ -76,31 +76,13 @@ struct ProfilePage: View {
                     Text("Other")
                 }
             }
+            navBar(user: user, page: 2)
         }
     }
 }
 
 struct ProfilePage_Previews: PreviewProvider {
     static var previews: some View {
-        ProfilePage(user: UserInformation(name: "Sarah Toll", level: "Beginner", workoutsCompleted: 2, timeRan: 50, timeWorkedOut: 200))
-    }
-}
-struct lilRectangle:View{
-    var number: Int
-    var title: String
-    var body: some View{
-        ZStack{
-            Rectangle().fill(.white).cornerRadius(10).shadow(radius: 10).frame(width:81,height:56).padding(.leading,20)
-            VStack{
-                Text(String(number)).font(.system(size:14)).zIndex(1).fontWeight(.medium).foregroundStyle(LinearGradient(gradient: Gradient(colors: [CustomColors.newBlue2, CustomColors.newBlue]), startPoint: .leading, endPoint: .trailing))
-                Text(title).foregroundColor(.black).font(.system(size:12))
-            }.padding(.leading, 20)
-            
-        }
-    }
-}
-struct lilRectangle_Previews: PreviewProvider{
-    static var previews: some View{
-        lilRectangle(number: 178, title: "Height")
+        ProfilePage(user: UserInformation(firstname: "Sarah", lastname:"Toll", level: "Beginner", workoutsCompleted: 2, timeRan: 50, timeWorkedOut: 200))
     }
 }

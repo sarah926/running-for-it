@@ -15,9 +15,9 @@ struct WorkoutSummary: View {
     var body: some View {
         VStack{
             HStack{
-                NavigationLink(destination: Countdown(times:times, repeats: intervals)){
+               /* NavigationLink(destination: Countdown(times: times)){
                     RoundedButton(title: "Continue", color: CustomColors.darkBlue)
-                }
+                }*/
                 Spacer()
                 NavigationLink(destination: SelectIntervalTime()){
                     RoundedButton(title: "Edit", color: CustomColors.darkBlue).frame(width:120)

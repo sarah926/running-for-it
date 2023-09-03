@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct Login: View {
-    @State var email = ""
+    @State var firstName = ""
+    @State var lastName = ""
+    //@State var email = ""
+    //@State var password = ""
     var body: some View {
         
         VStack{
@@ -16,15 +19,26 @@ struct Login: View {
             Text("Hi there, ").font(.system(size:16))
             Text("Welcome Back").fontWeight(.bold).font(.system(size:20))
             HStack{
+                Image("Profile")
+                TextField("  First Name", text: $firstName).frame(width: 315, height: 48).foregroundColor(CustomColors.black).background(Rectangle().opacity(0.1).cornerRadius(14)).textContentType(.name)
+            }
+            HStack{
+                Image("Profile")
+                TextField("  Last Name", text: $lastName).frame(width: 315, height: 48).foregroundColor(CustomColors.black).background(Rectangle().opacity(0.1).cornerRadius(14)).textContentType(.familyName)
+            }.padding(.top, 15)
+            //add for email and password
+            /*
+            HStack{
                 Image("Message")
-                TextField("  Email", text: $email).frame(width: 315, height: 48).foregroundColor(CustomColors.black).background(Rectangle().opacity(0.1).cornerRadius(14))
+                TextField("  Email", text: $email).frame(width: 315, height: 48).foregroundColor(CustomColors.black).background(Rectangle().opacity(0.1).cornerRadius(14)).textContentType(.emailAddress)
             }.padding(.top, 15)
             HStack{
                 Image("Lock")
-                TextField("  Password", text: $email).frame(width: 315, height: 48).foregroundColor(CustomColors.black).background(Rectangle().opacity(0.1).cornerRadius(14))
-            }
+                SecureField("  Password", text: $password).frame(width: 315, height: 48).foregroundColor(CustomColors.black).background(Rectangle().opacity(0.1).cornerRadius(14)).textContentType(.password)
+            }*/
             Spacer()
-            gradient(text: "Login", color1: CustomColors.newBlue, color2: CustomColors.newBlue2)
+            
+            gradient(text: "Login", color1: CustomColors.newBlue, color2: CustomColors.newBlue2).disabled(email.isEmpty || password.isEmpty)
         }
     }
 }

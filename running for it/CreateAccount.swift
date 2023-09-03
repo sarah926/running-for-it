@@ -19,22 +19,29 @@ struct CreateAccount: View {
             Spacer()
             HStack{
                 Image("Profile")
-                TextField("  First Name", text: $firstName).frame(width: 315, height: 48).foregroundColor(CustomColors.black).background(Rectangle().opacity(0.1).cornerRadius(14))
+                TextField("  First Name", text: $firstName).frame(width: 315, height: 48).foregroundColor(CustomColors.black).background(Rectangle().opacity(0.1).cornerRadius(14)).textContentType(.name)
             }
             HStack{
                 Image("Profile")
-                TextField("  Last Name", text: $lastName).frame(width: 315, height: 48).foregroundColor(CustomColors.black).background(Rectangle().opacity(0.1).cornerRadius(14))
+                TextField("  Last Name", text: $lastName).frame(width: 315, height: 48).foregroundColor(CustomColors.black).background(Rectangle().opacity(0.1).cornerRadius(14)).textContentType(.familyName)
             }.padding(.top, 15)
+            NavigationLink(destination: Login()){
+                Text("Already a user?").underline(color: .blue).foregroundColor(.blue)
+            }
+            /*
             HStack{
                 Image("Message")
-                TextField("  Email", text: $email).frame(width: 315, height: 48).foregroundColor(CustomColors.black).background(Rectangle().opacity(0.1).cornerRadius(14))
+                TextField("  Email", text: $email).frame(width: 315, height: 48).foregroundColor(CustomColors.black).background(Rectangle().opacity(0.1).cornerRadius(14)).textContentType(.emailAddress)
             }.padding(.top, 15)
             HStack{
                 Image("Lock")
-                TextField("  Password", text: $password).frame(width: 315, height: 48).foregroundColor(CustomColors.black).background(Rectangle().opacity(0.1).cornerRadius(14))
+                TextField("  Password", text: $password).frame(width: 315, height: 48).foregroundColor(CustomColors.black).background(Rectangle().opacity(0.1).cornerRadius(14)).textContentType(.newPassword)
             }.padding(.top, 15)
+             */
             Spacer()
-            gradient(text: "Register", color1: CustomColors.newBlue, color2: CustomColors.newBlue2)
+            NavigationLink(destination: LevelSelect(user: UserInformation(firstname: firstName, lastname: lastName, level: "Beginner", workoutsCompleted: 0, timeRan: 0, timeWorkedOut: 0))){
+                gradient(text: "Register", color1: CustomColors.newBlue, color2: CustomColors.newBlue2)
+            }
         }
         
     }

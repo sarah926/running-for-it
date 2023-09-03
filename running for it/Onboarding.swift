@@ -25,7 +25,7 @@ struct Onboarding: View {
             
             HStack{
                 Spacer()
-                NavigationLink(destination: LevelSelect(level:0)){
+                NavigationLink(destination: CreateAccount()){
                         Image("Button").frame(width:60,height:60).padding(.trailing, 35)}
                 }
             Spacer(minLength:45)
