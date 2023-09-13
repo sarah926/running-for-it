@@ -31,7 +31,7 @@ struct ActivityTracker: View {
                 Text("Activity Progress").font(.system(size:16)).fontWeight(.semibold).padding(.leading, 30)
                 Spacer()
             }
-            barGraph()
+            barGraph(user: user)
             Spacer()
             navBar(user: user, page: 1)
         }

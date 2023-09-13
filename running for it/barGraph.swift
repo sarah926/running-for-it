@@ -12,19 +12,25 @@ struct ValuePerCategory {
     var value: Double
 }
 struct barGraph: View {
-    let data: [ValuePerCategory] = [
-        .init(category: "MON", value: 5),
-        .init(category: "TUES",value: 10),
-        .init(category: "WED", value: 20),
-        .init(category: "THUR", value: 20),
-        .init(category: "FRI", value: 30),
-        .init(category: "SAT", value: 2),
-        .init(category: "SUN", value: 40)
-    ]
+    @State var user: UserInformation
+    //var b = beginnerPlan()
+    //data.append(.init(String))
     
+    @State var data: [ValuePerCategory] = [
+        .init(category: String(1), value: beginnerPlan().totalTimes[0]),
+        .init(category: String(2), value: beginnerPlan().totalTimes[1]),
+        .init(category: String(3), value: beginnerPlan().totalTimes[2]),
+        .init(category: String(4), value: beginnerPlan().totalTimes[3]),
+        //.init(category: String(5), value: beginnerPlan().totalTimes[4]),
+    ]
+    func updateData() -> [ValuePerCategory]{
+        data.append(ValuePerCategory(category: String(5), value: 25))
+        return data
+    }
     var body: some View {
+        //updateData()
         VStack{
-            Chart(data, id: \.category) { item in
+            Chart(updateData(), id: \.category) { item in
                 BarMark(
                     x: .value("Category", item.category),
                     y: .value("Data", item.value)
@@ -38,6 +44,6 @@ struct barGraph: View {
 
 struct barGraph_Previews: PreviewProvider {
     static var previews: some View {
-        barGraph()
+        barGraph(user: UserInformation(firstname: "Sarah", lastname: "toll", level: "Beginner", workoutsCompleted: 3, timeRan: 20, timeWorkedOut: 30))
     }
 }

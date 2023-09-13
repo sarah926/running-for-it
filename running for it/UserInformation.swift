@@ -26,7 +26,7 @@ class UserInformation{
         self.firstname = firstname
         self.lastname = lastname
         self.level = level
-        self.workoutsCompleted = 0
+        self.workoutsCompleted = 2
         self.timeRan = 0
         self.timeWorkedOut = 0
     }
@@ -47,20 +47,20 @@ class manageUserInformation{
     var userList: [UserInformation] = []
     //adds names to the list
     func addCredentials(firstname: String, lastname: String, level: String){
-        var found = searchCredential(firstname: firstname, lastname: lastname)
+        var found = searchCredentialNum(firstname: firstname, lastname: lastname)
         if(found < 0){
             userList.append(UserInformation(firstname: firstname, lastname: lastname, level: level))
         }
     }
     //deletes name from list
     func deleteCredential(firstname: String, lastname: String){
-        var found = searchCredential(firstname: firstname, lastname: lastname)
+        var found = searchCredentialNum(firstname: firstname, lastname: lastname)
         if(found > 0){
             userList.remove(at: found)
         }
     }
     //searches for name
-    func searchCredential(firstname: String, lastname: String)->Int{
+    func searchCredentialNum(firstname: String, lastname: String)->Int{
         var tracker = 0
         for _ in userList{
             if userList[tracker].firstname == firstname && userList[tracker].lastname == lastname{
@@ -69,5 +69,13 @@ class manageUserInformation{
             tracker+=1
         }
         return -1
+    }
+    //returns credential if in the list, if not creates a new one and returns it
+    func getCredential(firstname: String, lastname: String)->UserInformation{
+        var found = searchCredentialNum(firstname: firstname, lastname: lastname)
+        if(found > 0){
+            return userList[found]
+        }
+        return UserInformation(firstname: "", lastname: "", level: "")
     }
 }

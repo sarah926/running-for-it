@@ -51,6 +51,8 @@
 		D06CB4D72A9FEEA400AB04C9 /* navBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06CB4D62A9FEEA400AB04C9 /* navBar.swift */; };
 		D09DAF9F2AA00CA0008FFBDC /* intermediatePlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09DAF9E2AA00CA0008FFBDC /* intermediatePlan.swift */; };
 		D09DAFA12AA00CC0008FFBDC /* expertPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09DAFA02AA00CC0008FFBDC /* expertPlan.swift */; };
+		D09DAFA32AA6D025008FFBDC /* database.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09DAFA22AA6D025008FFBDC /* database.swift */; };
+		D09DAFA62AA6D193008FFBDC /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = D09DAFA52AA6D193008FFBDC /* SQLite */; };
 		D0F64D662A9D74F2003B3BF0 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F64D652A9D74F2003B3BF0 /* HomePage.swift */; };
 		D0F64D692A9D77C7003B3BF0 /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F64D682A9D77C7003B3BF0 /* ProfilePage.swift */; };
 		D0F64D6B2A9D7D75003B3BF0 /* TimesUserSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F64D6A2A9D7D75003B3BF0 /* TimesUserSelected.swift */; };
@@ -185,6 +187,7 @@
 		D06CB4D62A9FEEA400AB04C9 /* navBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navBar.swift; sourceTree = "<group>"; };
 		D09DAF9E2AA00CA0008FFBDC /* intermediatePlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = intermediatePlan.swift; sourceTree = "<group>"; };
 		D09DAFA02AA00CC0008FFBDC /* expertPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = expertPlan.swift; sourceTree = "<group>"; };
+		D09DAFA22AA6D025008FFBDC /* database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = database.swift; sourceTree = "<group>"; };
 		D0F64D652A9D74F2003B3BF0 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		D0F64D682A9D77C7003B3BF0 /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
 		D0F64D6A2A9D7D75003B3BF0 /* TimesUserSelected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesUserSelected.swift; sourceTree = "<group>"; };
@@ -201,6 +204,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D09DAFA62AA6D193008FFBDC /* SQLite in Frameworks */,
 				D060ADCC2A888CA10069DD45 /* SwiftFX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +320,7 @@
 				D060AD2A2A79FAD10069DD45 /* running_for_itApp.swift */,
 				D060AD2C2A79FAD10069DD45 /* ContentView.swift */,
 				D06CB4CC2A9E98DD00AB04C9 /* ActivityTracker.swift */,
+				D09DAFA22AA6D025008FFBDC /* database.swift */,
 				D06CB4D42A9FEC2600AB04C9 /* lilRectangle.swift */,
 				D06CB4D22A9FEBE300AB04C9 /* lilRectangle2.swift */,
 				D057E9432A9D573A00901153 /* beginnerPlan.swift */,
@@ -445,6 +450,7 @@
 			name = "running for it";
 			packageProductDependencies = (
 				D060ADCB2A888CA10069DD45 /* SwiftFX */,
+				D09DAFA52AA6D193008FFBDC /* SQLite */,
 			);
 			productName = "running for it";
 			productReference = D060AD272A79FAD10069DD45 /* running for it.app */;
@@ -691,6 +697,7 @@
 			mainGroup = D060AD1E2A79FAD10069DD45;
 			packageReferences = (
 				D060ADCA2A888CA10069DD45 /* XCRemoteSwiftPackageReference "SwiftFX" */,
+				D09DAFA42AA6D193008FFBDC /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 			);
 			productRefGroup = D060AD282A79FAD10069DD45 /* Products */;
 			projectDirPath = "";
@@ -838,6 +845,7 @@
 				D0F64D6D2A9D7D9C003B3BF0 /* UserInformation.swift in Sources */,
 				D06CB4D72A9FEEA400AB04C9 /* navBar.swift in Sources */,
 				D060ADD02A89987A0069DD45 /* RectangleViewVersion2.swift in Sources */,
+				D09DAFA32AA6D025008FFBDC /* database.swift in Sources */,
 				D060AD592A7CC8A70069DD45 /* Countdown.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1204,7 +1212,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"runner/Preview Content\"";
@@ -1233,7 +1240,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"runner/Preview Content\"";
@@ -1662,6 +1668,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		D09DAFA42AA6D193008FFBDC /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.14.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1669,6 +1683,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D060ADCA2A888CA10069DD45 /* XCRemoteSwiftPackageReference "SwiftFX" */;
 			productName = SwiftFX;
+		};
+		D09DAFA52AA6D193008FFBDC /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D09DAFA42AA6D193008FFBDC /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

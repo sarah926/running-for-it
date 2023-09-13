@@ -12,6 +12,7 @@ struct Login: View {
     @State var lastName = ""
     //@State var email = ""
     //@State var password = ""
+    @State var manage = manageUserInformation()
     var body: some View {
         
         VStack{
@@ -37,8 +38,15 @@ struct Login: View {
                 SecureField("  Password", text: $password).frame(width: 315, height: 48).foregroundColor(CustomColors.black).background(Rectangle().opacity(0.1).cornerRadius(14)).textContentType(.password)
             }*/
             Spacer()
-            
-            gradient(text: "Login", color1: CustomColors.newBlue, color2: CustomColors.newBlue2).disabled(email.isEmpty || password.isEmpty)
+            if(manage.getCredential(firstname: firstName, lastname: lastName).firstname.isEmpty){
+                NavigationLink(destination: HomePage(user: manage.getCredential(firstname: firstName, lastname: lastName))){
+                    gradient(text: "Login", color1: CustomColors.newBlue, color2: CustomColors.newBlue2).disabled(firstName.isEmpty || lastName.isEmpty)
+                }
+            }else{
+                NavigationLink(destination: HomePage(user: UserInformation(firstname: firstName, lastname: lastName, level: "Beginner"))){
+                    gradient(text: "Login", color1: CustomColors.newBlue, color2: CustomColors.newBlue2).disabled(firstName.isEmpty || lastName.isEmpty)
+                }
+            }
         }
     }
 }

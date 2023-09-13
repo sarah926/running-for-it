@@ -29,7 +29,6 @@ struct LevelSelect: View {
     }
     var body: some View {
         VStack{
-            
             Text("What is your goal?").font(.system(size:20)).fontWeight(.bold).foregroundColor(CustomColors.black)
             Text("This will help us choose a best\nprogram for you").multilineTextAlignment(.center).foregroundColor(CustomColors.darkGray).font(.system(size:12))
             Spacer()
